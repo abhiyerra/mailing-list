@@ -1,0 +1,61 @@
+#+TITLE: Serverless Landing Page
+
+** Introduction
+
+   When starting up a website the first thing you want to do is put up
+   a tool to collect emails. There are many tools to achieve this from
+   MailChimp to a Google Form. However, we wanted to build a tool that
+   keeps all your data in one place.
+
+   We wanted to fulfill the following criteria:
+
+   - Control our user interface. Many of the Mailing List providers
+     want to customize the UI or do a redirect. We wanted to avoid
+     that.
+   - Control privacy of the users.
+   - Make sure that customers have all the features of normal email
+     subscription services. Ability to unsubscribe.
+
+** Tools
+
+   We will be using the following tools to create a subscription form and
+   service.
+
+   - AWS Lambda
+   - DynamoDB
+   - AngularJS 2.0
+   - Bash and Mutt
+
+** Backend
+
+   The backend of the service will be powered by AWS Lambda and AWS
+   DynamoDB. We are using these tools to ensure a NoOps infrastructure
+   and easy maintainence. As said we want to split the AWS Lambda
+   function into two portions. One for subscribing and one for
+   unsubscribing.
+
+*** index.js
+
+#+INCLUDE: index.js
+
+*** subscribe.js
+
+*** unsubscribe.js
+
+*** email.js
+
+*** AWS Lambda Policy
+
+#+INCLUDE: LandingPagePolicy.json
+
+
+** Frontend
+
+   For an email subscription service we need to include two features. The
+   first one is subscribe a user to email. The second one is unsubscribe
+   users from the email service. We will be using AngularJS for this
+   service.
+
+#+INCLUDE: www/angular2/subscribe.ts
+
+** Help
