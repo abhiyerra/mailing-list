@@ -56,6 +56,6 @@
    users from the email service. We will be using AngularJS for this
    service.
 
-#+INCLUDE: www/angular2/subscribe.ts
+#+INCLUDE: www/angular2/landing_page.ts
 
 ** Help

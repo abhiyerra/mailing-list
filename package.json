@@ -1,0 +1,19 @@
+{
+    "name": "opszero-mailing-list",
+    "version": "0.1.0",
+    "description": "Serverless Mailing List",
+    "main": "index.js",
+    "license": "GPL-3.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/opszero/mailing-list.git"
+    },
+    "author": "Acksin",
+    "readmeFilename": "README.org",
+    "bugs": {
+        "url": "https://github.com/opszero/mailing-list/issues"
+    },
+    "homepage": "https://www.acksin.com/solutions/mailing-list/",
+    "dependencies": {
+    }
+}
