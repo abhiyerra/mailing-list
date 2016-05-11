@@ -5,6 +5,7 @@ deps: README.html
 
 release:
 	zip -r opszero-mailing-list-$(VERSION).zip index.js LandingPagePolicy.json LICENSE Makefile README.org www node_modules
+	cp opszero-mailing-list-$(VERSION).zip output.zip
 	curl -T opszero-mailing-list-$(VERSION).zip ftp://ftp.sendowl.com --user $(SENDOWL_FTP_USER):$(SENDOWL_FTP_PASSWORD)
 
 README.html:

@@ -36,7 +36,7 @@
 
 *** index.js
 
-#+INCLUDE: index.js
+#+INCLUDE: index.js src js
 
 *** subscribe.js
 
@@ -46,7 +46,7 @@
 
 *** AWS Lambda Policy
 
-#+INCLUDE: LandingPagePolicy.json
+#+INCLUDE: LandingPagePolicy.json src json
 
 
 ** Frontend
@@ -56,6 +56,6 @@
    users from the email service. We will be using AngularJS for this
    service.
 
-#+INCLUDE: www/angular2/landing_page.ts
+#+INCLUDE: www/angular2/landing_page.ts src js
 
 ** Help
