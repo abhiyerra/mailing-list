@@ -1,0 +1,22 @@
+{
+    "EMAIL_TABLE": "AcksinEmails",
+    "emailLayout": "layout.html",
+    "welcomeEmail": "welcome_email",
+    "workflows": [
+        {
+            "name": "first_email",
+            "daysAfterSignup": 1
+        },
+        {
+            "name": "second_email",
+            "daysAfterSignup": 7
+        },
+        {
+            "name": "third_email",
+            "daysAfterSignup": 14
+        },
+        {
+            "name": "introducing-opszero"
+        }
+    ]
+}

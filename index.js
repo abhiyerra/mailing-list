@@ -9,17 +9,15 @@ var dynamodb = new AWS.DynamoDB();
 exports.handler = function(event, context) {
     switch(event.Action) {
     case "Subscribe":
-        subscribe(event.Email, event.Product, event.SignUpPage) {
+        subscribe(event.Email, event.Product, event.SignUpPage, context);
     case "Unsubscribe":
-
-    case "Email":
-
+        unsubscribe(event.Email, event.Reason, context);
     }
 }
 
-function subscribe(email, product, signupPage) {
+function subscribe(email, product, signupPage, context) {
     dynamodb.putItem({
-        TableName: config.STORE_TABLE,
+        TableName: config.EMAIL_TABLE,
         Item: {
             Email: {
                 S: email
@@ -27,6 +25,9 @@ function subscribe(email, product, signupPage) {
             Products: {
                 S: product
             },
+            CreatedAt: {
+                S: new Date().toISOString()
+            }
             Notes: {
                 SignUpPage: {
                     S: signupPage
@@ -34,6 +35,25 @@ function subscribe(email, product, signupPage) {
             }
         }
     }, function(err, data) {
+        if(err != nil) {
+            context.fail(err);
+        }
 
+        context.done();
+    });
+}
+
+function unsubscribe(email) {
+    dynamodb.deleteItem({
+        TableName: config.EMAIL_TABLE,
+        Key: {
+            "Email": email
+        }
+    }, function(err, data) {
+        if(err != nil) {
+            context.fail(err);
+        }
+
+        context.done();
     });
 }
