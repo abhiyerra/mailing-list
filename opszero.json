@@ -1,0 +1,15 @@
+{
+    "name": "mailing-list",
+    "description": "AWS Lambda powered mailiing list. Includes subscribe, unsubscribe and email workflows.",
+    "tags": ["web", "email"],
+    "license": "MIT",
+    "author": "Abhi Yerra",
+    "email": "abhi@acksin.com",
+    "archive": "output.zip",
+    "buildCommand": "make build",
+    "readme": "README.md",
+    "branch": "master",
+    "aws": {
+        "policyFiles": []
+    }
+}
